@@ -8,8 +8,8 @@
 <title>color / tools</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/home.css?v=3">
-<link rel="stylesheet" href="/tool.css?v=4">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
 <link rel="stylesheet" href="/color/style.css?v=1">
 </head>
 <body>
@@ -40,16 +40,16 @@
         </div>
         <table class="kv">
           <tbody>
-            <tr><th>HEX</th><td><span id="oHex"></span><button type="button" class="tbtn" data-copy="#oHex">复制</button></td></tr>
-            <tr><th>RGB</th><td><span id="oRgb"></span><button type="button" class="tbtn" data-copy="#oRgb">复制</button></td></tr>
-            <tr><th>HSL</th><td><span id="oHsl"></span><button type="button" class="tbtn" data-copy="#oHsl">复制</button></td></tr>
-            <tr><th>OKLCH</th><td><span id="oOklch"></span><button type="button" class="tbtn" data-copy="#oOklch">复制</button></td></tr>
+            <tr><th>HEX</th><td><span id="oHex"></span><button type="button" class="tbtn cbtn" data-copy="#oHex">复制</button></td></tr>
+            <tr><th>RGB</th><td><span id="oRgb"></span><button type="button" class="tbtn cbtn" data-copy="#oRgb">复制</button></td></tr>
+            <tr><th>HSL</th><td><span id="oHsl"></span><button type="button" class="tbtn cbtn" data-copy="#oHsl">复制</button></td></tr>
+            <tr><th>OKLCH</th><td><span id="oOklch"></span><button type="button" class="tbtn cbtn" data-copy="#oOklch">复制</button></td></tr>
           </tbody>
         </table>
         <div class="pane-head sub">
           <h2>CSS 变量</h2>
           <span class="spacer"></span>
-          <button type="button" class="tbtn" data-copy="#oVars">复制</button>
+          <button type="button" class="tbtn cbtn" data-copy="#oVars">复制</button>
         </div>
         <pre class="io vars" id="oVars"></pre>
       </div>
@@ -81,7 +81,7 @@
     <span>全部在浏览器本地处理</span>
   </footer>
 </main>
-<script src="/common.js?v=1"></script>
+<script src="/common.js?v=2"></script>
 <script src="/color/app.js?v=1"></script>
 </body>
 </html>

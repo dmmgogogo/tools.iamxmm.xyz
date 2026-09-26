@@ -8,8 +8,8 @@
 <title>regex / tools</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/home.css?v=3">
-<link rel="stylesheet" href="/tool.css?v=4">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
 <link rel="stylesheet" href="/regex/style.css?v=1">
 </head>
 <body>
@@ -83,7 +83,7 @@
         <div class="pane-head">
           <h2>替换</h2><span class="meta" id="repMeta"></span>
           <span class="spacer"></span>
-          <button type="button" class="tbtn" data-copy="#repOut">复制结果</button>
+          <button type="button" class="tbtn cbtn" data-copy="#repOut">复制结果</button>
         </div>
         <input type="text" class="field re-rep" id="rep" autocomplete="off" spellcheck="false" placeholder="替换模板，支持 $1、$<name>、$&amp;；留空即删除匹配" aria-label="替换模板">
         <textarea class="io short" id="repOut" readonly spellcheck="false"></textarea>
@@ -96,7 +96,7 @@
     <span>全部在浏览器本地处理</span>
   </footer>
 </main>
-<script src="/common.js?v=1"></script>
+<script src="/common.js?v=2"></script>
 <script src="/regex/app.js?v=1"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
   /* 结果色：计算结果、可复制的值、操作按钮 */
   --result: oklch(0.52 0.2 262);
   --result-hover: oklch(0.44 0.2 262);
+  --ok: oklch(0.55 0.15 150);
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -22,6 +23,7 @@
     --accent: oklch(0.7 0.17 38);
     --result: oklch(0.74 0.14 255);
     --result-hover: oklch(0.82 0.11 255);
+    --ok: oklch(0.75 0.15 150);
   }
 }
 

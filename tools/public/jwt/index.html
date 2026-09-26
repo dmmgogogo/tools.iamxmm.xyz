@@ -8,8 +8,8 @@
 <title>jwt / tools</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/home.css?v=3">
-<link rel="stylesheet" href="/tool.css?v=4">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
 <link rel="stylesheet" href="/jwt/style.css?v=1">
 </head>
 <body>
@@ -45,19 +45,19 @@
         <div class="pane-head">
           <h2>Header</h2><span class="meta" id="algMeta"></span>
           <span class="spacer"></span>
-          <button type="button" class="tbtn" data-copy="#header">复制</button>
+          <button type="button" class="tbtn cbtn" data-copy="#header">复制</button>
         </div>
         <pre class="io short" id="header"></pre>
         <div class="pane-head sub">
           <h2>Payload</h2>
           <span class="spacer"></span>
-          <button type="button" class="tbtn" data-copy="#payload">复制</button>
+          <button type="button" class="tbtn cbtn" data-copy="#payload">复制</button>
         </div>
         <pre class="io" id="payload"></pre>
         <div class="pane-head sub">
           <h2>Signature</h2><span class="meta">原文（base64url），未校验</span>
           <span class="spacer"></span>
-          <button type="button" class="tbtn" data-copy="#sig">复制</button>
+          <button type="button" class="tbtn cbtn" data-copy="#sig">复制</button>
         </div>
         <pre class="io sig" id="sig"></pre>
       </div>
@@ -69,7 +69,7 @@
     <span>全部在浏览器本地处理</span>
   </footer>
 </main>
-<script src="/common.js?v=1"></script>
+<script src="/common.js?v=2"></script>
 <script src="/jwt/app.js?v=1"></script>
 </body>
 </html>

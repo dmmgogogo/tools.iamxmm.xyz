@@ -102,9 +102,9 @@
     span.textContent = value;
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'tbtn';
+    btn.className = 'tbtn cbtn';
     btn.textContent = '复制';
-    btn.addEventListener('click', () => copy(value));
+    btn.addEventListener('click', () => copy(value, btn));
     td.append(span, btn);
     return td;
   }

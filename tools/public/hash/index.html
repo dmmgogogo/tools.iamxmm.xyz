@@ -8,8 +8,8 @@
 <title>hash / tools</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/home.css?v=3">
-<link rel="stylesheet" href="/tool.css?v=4">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
 <link rel="stylesheet" href="/hash/style.css?v=1">
 </head>
 <body>
@@ -44,11 +44,11 @@
         </div>
         <table class="kv hashes">
           <tbody>
-            <tr><th>MD5</th><td><span class="hv" id="hMD5"></span><button type="button" class="tbtn" data-copy="#hMD5">复制</button></td></tr>
-            <tr><th>SHA-1</th><td><span class="hv" id="hSHA-1"></span><button type="button" class="tbtn" data-copy="#hSHA-1">复制</button></td></tr>
-            <tr><th>SHA-256</th><td><span class="hv" id="hSHA-256"></span><button type="button" class="tbtn" data-copy="#hSHA-256">复制</button></td></tr>
-            <tr><th>SHA-384</th><td><span class="hv" id="hSHA-384"></span><button type="button" class="tbtn" data-copy="#hSHA-384">复制</button></td></tr>
-            <tr><th>SHA-512</th><td><span class="hv" id="hSHA-512"></span><button type="button" class="tbtn" data-copy="#hSHA-512">复制</button></td></tr>
+            <tr><th>MD5</th><td><span class="hv" id="hMD5"></span><button type="button" class="tbtn cbtn" data-copy="#hMD5">复制</button></td></tr>
+            <tr><th>SHA-1</th><td><span class="hv" id="hSHA-1"></span><button type="button" class="tbtn cbtn" data-copy="#hSHA-1">复制</button></td></tr>
+            <tr><th>SHA-256</th><td><span class="hv" id="hSHA-256"></span><button type="button" class="tbtn cbtn" data-copy="#hSHA-256">复制</button></td></tr>
+            <tr><th>SHA-384</th><td><span class="hv" id="hSHA-384"></span><button type="button" class="tbtn cbtn" data-copy="#hSHA-384">复制</button></td></tr>
+            <tr><th>SHA-512</th><td><span class="hv" id="hSHA-512"></span><button type="button" class="tbtn cbtn" data-copy="#hSHA-512">复制</button></td></tr>
           </tbody>
         </table>
         <div class="status" id="status"></div>
@@ -68,8 +68,8 @@
     </div>
     <table class="kv hashes">
       <tbody>
-        <tr><th>HMAC HEX</th><td><span class="hv" id="hmacHex"></span><button type="button" class="tbtn" data-copy="#hmacHex">复制</button></td></tr>
-        <tr><th>HMAC Base64</th><td><span class="hv" id="hmacB64"></span><button type="button" class="tbtn" data-copy="#hmacB64">复制</button></td></tr>
+        <tr><th>HMAC HEX</th><td><span class="hv" id="hmacHex"></span><button type="button" class="tbtn cbtn" data-copy="#hmacHex">复制</button></td></tr>
+        <tr><th>HMAC Base64</th><td><span class="hv" id="hmacB64"></span><button type="button" class="tbtn cbtn" data-copy="#hmacB64">复制</button></td></tr>
       </tbody>
     </table>
     <div class="status" id="hmacStatus"></div>
@@ -80,7 +80,7 @@
     <span>全部在浏览器本地处理</span>
   </footer>
 </main>
-<script src="/common.js?v=1"></script>
+<script src="/common.js?v=2"></script>
 <script src="/hash/app.js?v=1"></script>
 </body>
 </html>

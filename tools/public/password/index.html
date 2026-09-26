@@ -8,8 +8,8 @@
 <title>password / tools</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/home.css?v=3">
-<link rel="stylesheet" href="/tool.css?v=4">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
 <link rel="stylesheet" href="/password/style.css?v=1">
 </head>
 <body>
@@ -42,7 +42,7 @@
         <div class="pane-head">
           <h2>密码</h2><span class="meta" id="pwMeta"></span>
           <span class="spacer"></span>
-          <button type="button" class="tbtn" data-copy="#pwOut">全部复制</button>
+          <button type="button" class="tbtn cbtn" data-copy="#pwOut">全部复制</button>
         </div>
         <textarea class="io short list" id="pwOut" readonly spellcheck="false" autocomplete="off"></textarea>
         <div class="status" id="pwStatus"></div>
@@ -65,7 +65,7 @@
         <div class="pane-head">
           <h2>UUID v4</h2><span class="meta" id="uuMeta"></span>
           <span class="spacer"></span>
-          <button type="button" class="tbtn" data-copy="#uuOut">全部复制</button>
+          <button type="button" class="tbtn cbtn" data-copy="#uuOut">全部复制</button>
         </div>
         <textarea class="io short list" id="uuOut" readonly spellcheck="false"></textarea>
         <div class="status" id="uuStatus"></div>
@@ -78,7 +78,7 @@
     <span>全部在浏览器本地生成，不上传</span>
   </footer>
 </main>
-<script src="/common.js?v=1"></script>
+<script src="/common.js?v=2"></script>
 <script src="/password/app.js?v=1"></script>
 </body>
 </html>

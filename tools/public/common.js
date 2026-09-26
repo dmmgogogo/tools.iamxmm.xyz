@@ -18,7 +18,19 @@
     toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1500);
   }
 
-  async function copy(text) {
+  // 复制成功后按钮短暂显示「✓ 已复制」
+  function flash(btn) {
+    if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+    btn.textContent = '✓ 已复制';
+    btn.classList.add('done');
+    clearTimeout(btn._flashTimer);
+    btn._flashTimer = setTimeout(() => {
+      btn.textContent = btn.dataset.label;
+      btn.classList.remove('done');
+    }, 1200);
+  }
+
+  async function copy(text, btn) {
     if (!text) { toast('没有可复制的内容'); return false; }
     try {
       await navigator.clipboard.writeText(text);
@@ -31,7 +43,7 @@
       ta.remove();
       if (!ok) { toast('复制失败，请手动复制'); return false; }
     }
-    toast('已复制');
+    if (btn) flash(btn); else toast('已复制');
     return true;
   }
 
@@ -61,7 +73,7 @@
     const c = e.target.closest('[data-copy]');
     if (c) {
       const target = $(c.dataset.copy);
-      if (target) copy(valueOf(target));
+      if (target) copy(valueOf(target), c);
       return;
     }
     const x = e.target.closest('[data-clear]');
