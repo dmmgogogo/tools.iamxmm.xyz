@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>url / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+<link rel="stylesheet" href="/url/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> url</p>
+    <h1 class="mark small">url<span class="slash">/</span></h1>
+    <p class="lede">URL 编码 / 解码，以及把完整 URL 拆成各部分和查询参数表。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="模式">
+        <button type="button" data-mode="comp" class="on">encodeURIComponent</button>
+        <button type="button" data-mode="uri">encodeURI</button>
+        <button type="button" data-mode="dec">解码</button>
+      </div>
+      <span class="spacer"></span>
+      <button type="button" class="btn" id="swap">⇄ 结果作为输入</button>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2 id="inTitle">原文</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#input">清空</button>
+        </div>
+        <textarea class="io short" id="input" spellcheck="false" placeholder="在这里输入或粘贴"></textarea>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2 id="outTitle">编码结果</h2><span class="meta" id="outMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#output">复制</button>
+        </div>
+        <textarea class="io short" id="output" readonly spellcheck="false"></textarea>
+        <div class="status" id="status"></div>
+      </div>
+    </div>
+
+    <div class="panes single parse">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>解析 URL</h2><span class="meta" id="parseMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#urlIn">清空</button>
+        </div>
+        <input type="text" class="field url-in" id="urlIn" autocomplete="off" spellcheck="false" placeholder="完整 URL，如 https://example.com:8080/path?a=1&amp;b=2#top">
+        <div class="status" id="parseStatus"></div>
+        <table class="kv"><tbody id="parts"></tbody></table>
+        <div class="pane-head qhead" id="qHead" hidden>
+          <h2>查询参数</h2><span class="meta" id="qMeta"></span>
+        </div>
+        <table class="kv query" id="qTable" hidden>
+          <thead><tr><th>键</th><th>值</th></tr></thead>
+          <tbody id="query"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/url/app.js?v=1"></script>
+</body>
+</html>

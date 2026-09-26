@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>password / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+<link rel="stylesheet" href="/password/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> password</p>
+    <h1 class="mark small">password<span class="slash">/</span></h1>
+    <p class="lede">用浏览器安全随机数批量生成随机密码与 UUID v4，无取模偏差。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <label class="opt" for="pwLen">长度</label>
+      <input class="field num" id="pwLen" type="number" min="4" max="128" value="20" inputmode="numeric">
+      <label class="opt" for="pwCount">数量</label>
+      <input class="field num" id="pwCount" type="number" min="1" max="100" value="5" inputmode="numeric">
+      <span class="spacer"></span>
+      <button type="button" class="btn primary" id="pwGen">生成密码</button>
+    </div>
+    <div class="bar">
+      <label class="opt"><input type="checkbox" id="csUpper" checked>大写 A-Z</label>
+      <label class="opt"><input type="checkbox" id="csLower" checked>小写 a-z</label>
+      <label class="opt"><input type="checkbox" id="csDigit" checked>数字 0-9</label>
+      <label class="opt"><input type="checkbox" id="csSymbol" checked>符号</label>
+      <label class="opt"><input type="checkbox" id="noAmbig">排除易混淆 0O1lI</label>
+    </div>
+
+    <div class="panes single">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>密码</h2><span class="meta" id="pwMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#pwOut">全部复制</button>
+        </div>
+        <textarea class="io short list" id="pwOut" readonly spellcheck="false" autocomplete="off"></textarea>
+        <div class="status" id="pwStatus"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work">
+    <div class="bar">
+      <label class="opt" for="uuCount">UUID 数量</label>
+      <input class="field num" id="uuCount" type="number" min="1" max="100" value="5" inputmode="numeric">
+      <label class="opt"><input type="checkbox" id="uuUpper">大写</label>
+      <label class="opt"><input type="checkbox" id="uuNoDash">去连字符</label>
+      <span class="spacer"></span>
+      <button type="button" class="btn primary" id="uuGen">生成 UUID</button>
+    </div>
+
+    <div class="panes single">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>UUID v4</h2><span class="meta" id="uuMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#uuOut">全部复制</button>
+        </div>
+        <textarea class="io short list" id="uuOut" readonly spellcheck="false"></textarea>
+        <div class="status" id="uuStatus"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地生成，不上传</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/password/app.js?v=1"></script>
+</body>
+</html>

@@ -1,6 +1,4 @@
 /* 依赖 /home.css 的变量和 .page/.mast/.index-head 等基础样式 */
-.page.wide { max-width: 1280px; }
-.mark.small { font-size: clamp(52px, 10vw, 96px); }
 .index { margin-top: clamp(36px, 7vh, 64px); }
 
 .tools-bar { display: flex; align-items: baseline; gap: 18px; }

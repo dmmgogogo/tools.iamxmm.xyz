@@ -1,0 +1,16 @@
+/* jwt 工具补充样式，只用 /home.css 变量 */
+.bar .note { font: 13px/1.5 var(--mono); color: var(--accent); }
+.pane-head.sub { margin-top: 20px; }
+pre.io.sig { min-height: 0; }
+.kv.times th { width: 120px; }
+.kv .tag { display: inline-block; margin-left: 8px; padding: 0 6px; border: 1px solid currentColor; font-size: 12px; line-height: 18px; }
+.kv .tag.bad { color: var(--accent); }
+.kv .tag.good { color: oklch(0.55 0.15 150); }
+.kv .sub { display: block; color: var(--ink-2); font-size: 12.5px; }
+.kv .empty-row td { color: var(--ink-2); }
+@media (prefers-color-scheme: dark) {
+  .kv .tag.good { color: oklch(0.75 0.15 150); }
+}
+@media (max-width: 760px) {
+  .kv.times th { width: 72px; }
+}

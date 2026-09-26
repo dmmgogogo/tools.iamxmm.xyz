@@ -1,0 +1,8 @@
+/* hash 工具补充样式，只用 /home.css 变量 */
+.field.grow { flex: 1 1 260px; min-width: 0; }
+.kv.hashes { margin-top: 4px; }
+.kv.hashes th { width: 120px; }
+.kv .hv:empty::before { content: "—"; color: var(--ink-2); }
+@media (max-width: 760px) {
+  .kv.hashes th { width: 96px; white-space: normal; }
+}

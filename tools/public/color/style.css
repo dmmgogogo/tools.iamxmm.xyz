@@ -1,0 +1,38 @@
+/* color 工具补充样式，只用 /home.css 变量 */
+.field.grow { flex: 1 1 280px; min-width: 0; }
+.picker {
+  width: 48px;
+  height: 34px;
+  padding: 2px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  cursor: pointer;
+}
+/* 棋盘格底，便于看出透明度 */
+.swatch-wrap {
+  border: 1px solid var(--rule);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(45deg, var(--rule) 25%, transparent 25%, transparent 75%, var(--rule) 75%),
+    linear-gradient(45deg, var(--rule) 25%, transparent 25%, transparent 75%, var(--rule) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+.swatch { height: 240px; }
+.pane-head.sub { margin-top: 20px; }
+pre.io.vars { min-height: 0; }
+.kv.contrast td { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.kv .sample { padding: 4px 10px; font: 600 15px/1.4 var(--sans); border: 1px solid var(--rule); }
+.kv .sample.on-white { background: #fff; }
+.kv .sample.on-black { background: #000; }
+.kv .ratio { font-weight: 600; min-width: 5.5em; }
+.kv .tag { display: inline-block; margin-right: 6px; padding: 0 6px; border: 1px solid currentColor; font-size: 12px; line-height: 18px; }
+.kv .tag.bad { color: var(--accent); }
+.kv .tag.good { color: oklch(0.55 0.15 150); }
+@media (prefers-color-scheme: dark) {
+  .kv .tag.good { color: oklch(0.75 0.15 150); }
+}
+@media (max-width: 760px) {
+  .swatch { height: 160px; }
+  .kv.contrast th { width: 56px; }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>escape / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> escape</p>
+    <h1 class="mark small">escape<span class="slash">/</span></h1>
+    <p class="lede">HTML 实体、Unicode \uXXXX、JS 字符串的转义与反转义。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="类型">
+        <button type="button" data-kind="html" class="on">HTML 实体</button>
+        <button type="button" data-kind="unicode">Unicode</button>
+        <button type="button" data-kind="js">JS 字符串</button>
+      </div>
+      <div class="seg" role="group" aria-label="方向">
+        <button type="button" data-dir="enc" class="on">转义</button>
+        <button type="button" data-dir="dec">反转义</button>
+      </div>
+      <span class="spacer"></span>
+      <button type="button" class="btn" id="swap">⇄ 结果作为输入</button>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2 id="inTitle">原文</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#input">清空</button>
+        </div>
+        <textarea class="io" id="input" spellcheck="false" placeholder="在这里输入或粘贴"></textarea>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2 id="outTitle">转义结果</h2><span class="meta" id="outMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#output">复制</button>
+        </div>
+        <textarea class="io" id="output" readonly spellcheck="false"></textarea>
+        <div class="status" id="status"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/escape/app.js?v=1"></script>
+</body>
+</html>

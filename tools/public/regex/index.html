@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>regex / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+<link rel="stylesheet" href="/regex/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> regex</p>
+    <h1 class="mark small">regex<span class="slash">/</span></h1>
+    <p class="lede">JavaScript 正则实时测试：高亮匹配、列出捕获组、预览替换结果。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <label class="re-box">
+        <span class="re-slash" aria-hidden="true">/</span>
+        <input type="text" class="field re-field" id="pattern" autocomplete="off" spellcheck="false" placeholder="正则表达式，不含两侧斜杠" aria-label="正则表达式">
+        <span class="re-slash" aria-hidden="true">/</span>
+      </label>
+      <div class="flags" role="group" aria-label="标志位">
+        <label class="opt" title="全局匹配"><input type="checkbox" data-flag="g" checked>g</label>
+        <label class="opt" title="忽略大小写"><input type="checkbox" data-flag="i">i</label>
+        <label class="opt" title="多行：^ $ 匹配每行"><input type="checkbox" data-flag="m">m</label>
+        <label class="opt" title="dotAll：. 匹配换行"><input type="checkbox" data-flag="s">s</label>
+        <label class="opt" title="Unicode"><input type="checkbox" data-flag="u">u</label>
+        <label class="opt" title="粘连"><input type="checkbox" data-flag="y">y</label>
+      </div>
+    </div>
+    <div class="bar">
+      <span class="meta-label">常用</span>
+      <button type="button" class="tbtn" data-preset="mobile">手机号（中国大陆）</button>
+      <button type="button" class="tbtn" data-preset="email">邮箱</button>
+      <button type="button" class="tbtn" data-preset="url">URL</button>
+      <button type="button" class="tbtn" data-preset="ipv4">IPv4</button>
+      <button type="button" class="tbtn" data-preset="idcard">身份证号（18 位）</button>
+      <button type="button" class="tbtn" data-preset="han">中文字符</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>测试文本</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#text">清空</button>
+        </div>
+        <textarea class="io" id="text" spellcheck="false" placeholder="在这里输入要匹配的文本"></textarea>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2>匹配高亮</h2><span class="meta" id="hitMeta"></span>
+        </div>
+        <pre class="io hl" id="hl" aria-live="polite"></pre>
+      </div>
+    </div>
+
+    <div class="panes single">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>匹配列表</h2><span class="meta" id="listMeta"></span>
+        </div>
+        <div class="matches-wrap">
+          <table class="matches">
+            <thead><tr><th>#</th><th>位置</th><th>匹配</th><th>捕获组</th></tr></thead>
+            <tbody id="list"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panes single">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>替换</h2><span class="meta" id="repMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#repOut">复制结果</button>
+        </div>
+        <input type="text" class="field re-rep" id="rep" autocomplete="off" spellcheck="false" placeholder="替换模板，支持 $1、$<name>、$&amp;；留空即删除匹配" aria-label="替换模板">
+        <textarea class="io short" id="repOut" readonly spellcheck="false"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/regex/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>color / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+<link rel="stylesheet" href="/color/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> color</p>
+    <h1 class="mark small">color<span class="slash">/</span></h1>
+    <p class="lede">HEX、RGB、HSL、OKLCH 互转，取色，并计算与黑白的 WCAG 对比度。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <input class="field grow" id="input" type="text" spellcheck="false" autocomplete="off" value="#2e86de" placeholder="#ff0000 / rgb(255 0 0) / hsl(0 100% 50%) / oklch(0.63 0.26 29)" aria-label="颜色值">
+      <label class="opt">取色<input type="color" class="picker" id="picker" value="#2e86de"></label>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>预览</h2><span class="meta" id="prevMeta"></span>
+        </div>
+        <div class="swatch-wrap"><div class="swatch" id="swatch"></div></div>
+        <div class="status" id="status"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2>格式</h2>
+        </div>
+        <table class="kv">
+          <tbody>
+            <tr><th>HEX</th><td><span id="oHex"></span><button type="button" class="tbtn" data-copy="#oHex">复制</button></td></tr>
+            <tr><th>RGB</th><td><span id="oRgb"></span><button type="button" class="tbtn" data-copy="#oRgb">复制</button></td></tr>
+            <tr><th>HSL</th><td><span id="oHsl"></span><button type="button" class="tbtn" data-copy="#oHsl">复制</button></td></tr>
+            <tr><th>OKLCH</th><td><span id="oOklch"></span><button type="button" class="tbtn" data-copy="#oOklch">复制</button></td></tr>
+          </tbody>
+        </table>
+        <div class="pane-head sub">
+          <h2>CSS 变量</h2>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#oVars">复制</button>
+        </div>
+        <pre class="io vars" id="oVars"></pre>
+      </div>
+    </div>
+
+    <div class="panes single">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>对比度（WCAG 2.x）</h2><span class="meta">普通文本 AA ≥ 4.5 · AAA ≥ 7；大号文本 AA ≥ 3 · AAA ≥ 4.5</span>
+        </div>
+        <table class="kv contrast">
+          <tbody>
+            <tr>
+              <th>白底</th>
+              <td><span class="sample on-white" id="sWhite">Aa 示例文字</span><span class="ratio" id="cWhite"></span><span id="tWhite"></span></td>
+            </tr>
+            <tr>
+              <th>黑底</th>
+              <td><span class="sample on-black" id="sBlack">Aa 示例文字</span><span class="ratio" id="cBlack"></span><span id="tBlack"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/color/app.js?v=1"></script>
+</body>
+</html>

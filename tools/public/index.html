@@ -6,40 +6,35 @@
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light dark">
 <title>tools / iamxmm</title>
-<link rel="stylesheet" href="/home.css?v=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
 </head>
 <body>
-<main class="page">
+<main class="page wide">
   <header class="mast">
     <p class="kicker"><a href="https://iamxmm.xyz">iamxmm.xyz</a> <span class="sep">/</span> 私人工具箱</p>
     <h1 class="mark">tools<span class="slash">/</span><span class="caret" aria-hidden="true"></span></h1>
-    <p class="lede">自用的小工具。数据留在本机浏览器，不经过服务器。</p>
+    <p class="lede">自用的小工具。全部在浏览器本地运行，数据不经过服务器。</p>
   </header>
 
-  <section class="index" aria-labelledby="idx-title">
-    <div class="index-head">
-      <h2 id="idx-title">目录</h2>
-      <span class="tally">01 项</span>
-    </div>
-    <ol class="list">
-      <li>
-        <a class="row" href="/2fa/">
-          <span class="no">01</span>
-          <span class="body">
-            <span class="name">2FA 动态密码</span>
-            <span class="desc">谷歌身份验证器 · TOTP 六位码，点击即复制，支持导入导出</span>
-          </span>
-          <span class="tag">/2fa</span>
-          <span class="go" aria-hidden="true">→</span>
-        </a>
-      </li>
-    </ol>
-  </section>
+  <div class="search">
+    <label class="search-box">
+      <span class="prompt" aria-hidden="true">/</span>
+      <input id="q" type="search" placeholder="搜索工具，如 json、base64、时间戳" autocomplete="off" spellcheck="false" aria-label="搜索工具">
+      <span class="tally" id="tally"></span>
+    </label>
+  </div>
+
+  <div id="catalog" class="catalog"></div>
+  <p id="empty" class="empty" hidden>没有匹配的工具</p>
 
   <footer class="foot">
     <span>tools.iamxmm.xyz</span>
-    <span>更多工具陆续加入</span>
+    <span>按 / 搜索 · 回车打开第一个结果</span>
   </footer>
 </main>
+<script src="/tools.js?v=1"></script>
+<script src="/home.js?v=1"></script>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>jwt / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+<link rel="stylesheet" href="/jwt/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> jwt</p>
+    <h1 class="mark small">jwt<span class="slash">/</span></h1>
+    <p class="lede">解码 JWT 的 Header 与 Payload，显示 exp / iat / nbf 对应的本地时间。只解码，不校验签名。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <span class="note">只解码，不校验签名 —— 解码成功不代表 token 可信</span>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>Token</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#input">清空</button>
+        </div>
+        <textarea class="io" id="input" spellcheck="false" placeholder="粘贴 JWT，例如 eyJhbGciOi...（可带 Bearer 前缀）"></textarea>
+        <div class="status" id="status"></div>
+        <div class="pane-head sub">
+          <h2>时间</h2><span class="meta" id="timeMeta"></span>
+        </div>
+        <table class="kv times">
+          <tbody id="times"></tbody>
+        </table>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2>Header</h2><span class="meta" id="algMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#header">复制</button>
+        </div>
+        <pre class="io short" id="header"></pre>
+        <div class="pane-head sub">
+          <h2>Payload</h2>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#payload">复制</button>
+        </div>
+        <pre class="io" id="payload"></pre>
+        <div class="pane-head sub">
+          <h2>Signature</h2><span class="meta">原文（base64url），未校验</span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-copy="#sig">复制</button>
+        </div>
+        <pre class="io sig" id="sig"></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/jwt/app.js?v=1"></script>
+</body>
+</html>

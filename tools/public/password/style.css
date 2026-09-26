@@ -1,0 +1,6 @@
+/* password 工具补充样式，只用 /home.css 变量 */
+.io.short.list { min-height: 200px; }
+.panes.single { margin-top: 16px; }
+@media (max-width: 760px) {
+  .field.num { width: 76px; }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>base64 / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> base64</p>
+    <h1 class="mark small">base64<span class="slash">/</span></h1>
+    <p class="lede">文本、文件、图片与 Base64 互转。UTF-8 编码，支持 URL 安全格式。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="方向">
+        <button type="button" id="modeEnc" class="on">编码</button>
+        <button type="button" id="modeDec">解码</button>
+      </div>
+      <label class="opt"><input type="checkbox" id="urlSafe">URL 安全（-_ 无填充）</label>
+      <span class="spacer"></span>
+      <button type="button" class="btn" id="swap">⇄ 结果作为输入</button>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2 id="inTitle">原文</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#input">清空</button>
+        </div>
+        <textarea class="io" id="input" spellcheck="false" placeholder="在这里输入或粘贴"></textarea>
+        <label class="drop" id="drop">
+          <input type="file" id="file">
+          <span>拖入或点击选择文件 → 转为 Base64（Data URL）</span>
+        </label>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2 id="outTitle">Base64</h2><span class="meta" id="outMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" id="dlBtn" hidden>下载文件</button>
+          <button type="button" class="tbtn" data-copy="#output">复制</button>
+        </div>
+        <textarea class="io" id="output" readonly spellcheck="false"></textarea>
+        <div class="preview" id="preview" hidden><img id="previewImg" alt="图片预览"></div>
+        <div class="status" id="status"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/base64/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* regex 专用，依赖 /home.css 变量与 /tool.css */
+.re-box { display: flex; align-items: center; gap: 6px; flex: 1 1 320px; min-width: 0; }
+.re-slash { font: 700 18px/1 var(--mono); color: var(--accent); }
+.re-field { flex: 1; min-width: 0; }
+.flags { display: inline-flex; flex-wrap: wrap; gap: 8px 14px; }
+.meta-label { font: 600 12px/1 var(--mono); letter-spacing: .14em; color: var(--ink-2); }
+.work > .status { margin-top: 10px; }
+
+.hl { color: var(--ink); }
+.hl mark {
+  background: color-mix(in oklch, var(--accent) 28%, transparent);
+  color: inherit;
+  border-radius: 2px;
+}
+.hl mark.alt { background: color-mix(in oklch, var(--accent) 48%, transparent); }
+.hl mark.empty { display: inline-block; width: 0; height: 1.2em; vertical-align: text-bottom; border-left: 2px solid var(--accent); background: none; }
+
+.panes + .panes { margin-top: 28px; }
+.matches-wrap { max-height: 420px; overflow-y: auto; border: 1px solid var(--rule); }
+.matches { width: 100%; border-collapse: collapse; table-layout: fixed; font: 13px/1.5 var(--mono); }
+.matches th, .matches td { padding: 8px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.matches th { position: sticky; top: 0; background: var(--paper); font-weight: 500; color: var(--ink-2); }
+.matches th:nth-child(1) { width: 3.5em; }
+.matches th:nth-child(2) { width: 7em; }
+.matches td { word-break: break-all; white-space: pre-wrap; }
+.matches .grp { display: block; }
+.matches .grp b { font-weight: 500; color: var(--ink-2); }
+.matches .none { color: var(--ink-2); }
+
+.re-rep { width: 100%; margin-bottom: 10px; }
+
+@media (max-width: 560px) {
+  .matches th:nth-child(2) { width: 5em; }
+}

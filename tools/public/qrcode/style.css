@@ -1,0 +1,30 @@
+/* qrcode 工具补充样式，只用 /home.css 变量 */
+.swatch-in {
+  width: 40px;
+  height: 30px;
+  padding: 2px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  cursor: pointer;
+}
+.qr-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: 16px;
+  border: 1px solid var(--rule);
+  background: var(--hover);
+}
+.qr-box canvas {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  image-rendering: pixelated;
+}
+.qr-empty { margin: 0; font: 13px/1.5 var(--mono); color: var(--ink-2); }
+.tbtn:disabled { opacity: .4; cursor: not-allowed; }
+@media (max-width: 760px) {
+  .qr-box { min-height: 200px; }
+}

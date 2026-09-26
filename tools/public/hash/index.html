@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>hash / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=2">
+<link rel="stylesheet" href="/tool.css?v=1">
+<link rel="stylesheet" href="/hash/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> hash</p>
+    <h1 class="mark small">hash<span class="slash">/</span></h1>
+    <p class="lede">计算文本或文件的 MD5、SHA-1、SHA-256、SHA-384、SHA-512 与 HMAC。文本按 UTF-8 编码。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <label class="opt"><input type="checkbox" id="upper">大写输出</label>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>输入</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#input">清空</button>
+        </div>
+        <textarea class="io" id="input" spellcheck="false" placeholder="在这里输入或粘贴文本"></textarea>
+        <label class="drop" id="drop">
+          <input type="file" id="file">
+          <span>拖入或点击选择文件计算哈希（上限 200 MB）</span>
+        </label>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2>摘要</h2>
+        </div>
+        <table class="kv hashes">
+          <tbody>
+            <tr><th>MD5</th><td><span class="hv" id="hMD5"></span><button type="button" class="tbtn" data-copy="#hMD5">复制</button></td></tr>
+            <tr><th>SHA-1</th><td><span class="hv" id="hSHA-1"></span><button type="button" class="tbtn" data-copy="#hSHA-1">复制</button></td></tr>
+            <tr><th>SHA-256</th><td><span class="hv" id="hSHA-256"></span><button type="button" class="tbtn" data-copy="#hSHA-256">复制</button></td></tr>
+            <tr><th>SHA-384</th><td><span class="hv" id="hSHA-384"></span><button type="button" class="tbtn" data-copy="#hSHA-384">复制</button></td></tr>
+            <tr><th>SHA-512</th><td><span class="hv" id="hSHA-512"></span><button type="button" class="tbtn" data-copy="#hSHA-512">复制</button></td></tr>
+          </tbody>
+        </table>
+        <div class="status" id="status"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work">
+    <div class="bar">
+      <label class="opt" for="hmacKey">HMAC 密钥</label>
+      <input class="field grow" id="hmacKey" type="text" spellcheck="false" autocomplete="off" placeholder="输入密钥（UTF-8），对上方同一输入计算">
+      <div class="seg" role="group" aria-label="HMAC 算法">
+        <button type="button" data-alg="SHA-1">SHA-1</button>
+        <button type="button" data-alg="SHA-256" class="on">SHA-256</button>
+        <button type="button" data-alg="SHA-512">SHA-512</button>
+      </div>
+    </div>
+    <table class="kv hashes">
+      <tbody>
+        <tr><th>HMAC HEX</th><td><span class="hv" id="hmacHex"></span><button type="button" class="tbtn" data-copy="#hmacHex">复制</button></td></tr>
+        <tr><th>HMAC Base64</th><td><span class="hv" id="hmacB64"></span><button type="button" class="tbtn" data-copy="#hmacB64">复制</button></td></tr>
+      </tbody>
+    </table>
+    <div class="status" id="hmacStatus"></div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=1"></script>
+<script src="/hash/app.js?v=1"></script>
+</body>
+</html>
