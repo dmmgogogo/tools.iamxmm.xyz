@@ -78,11 +78,11 @@
 .tbtn {
   position: relative;
   border: 0; padding: 0; background: none; cursor: pointer;
-  font: 500 12px/1 var(--mono); color: var(--ink-2);
+  font: 500 12px/1 var(--mono); color: var(--result);
   transition: color .2s var(--ease);
 }
 .tbtn::after { content: ""; position: absolute; inset: -10px -6px; }
-.tbtn:hover { color: var(--accent); }
+.tbtn:hover { color: var(--result-hover); text-decoration: underline; text-underline-offset: 3px; }
 
 /* 输入 / 输出双栏 */
 .panes {
@@ -118,6 +118,8 @@
 }
 .io:focus { border-color: var(--accent); }
 .io[readonly] { background: var(--hover); }
+/* 输出结果统一用结果色，和输入（墨色）区分 */
+.io[readonly], pre.io { color: var(--result); }
 .io.short { min-height: 120px; }
 pre.io { margin: 0; overflow: auto; white-space: pre-wrap; word-break: break-all; }
 
@@ -129,7 +131,7 @@ pre.io { margin: 0; overflow: auto; white-space: pre-wrap; word-break: break-all
 .kv { width: 100%; border-collapse: collapse; font: 13.5px/1.5 var(--mono); }
 .kv th, .kv td { padding: 10px 8px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
 .kv th { width: 140px; font-weight: 500; color: var(--ink-2); white-space: nowrap; }
-.kv td { word-break: break-all; }
+.kv td { word-break: break-all; color: var(--result); }
 .kv td .tbtn { margin-left: 10px; }
 
 .drop {

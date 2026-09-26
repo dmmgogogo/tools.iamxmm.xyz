@@ -6,7 +6,7 @@
 .meta-label { font: 600 12px/1 var(--mono); letter-spacing: .14em; color: var(--ink-2); }
 .work > .status { margin-top: 10px; }
 
-.hl { color: var(--ink); }
+pre.io.hl { color: var(--ink); } /* 高亮区是测试文本回显，不是结果 */
 .hl mark {
   background: color-mix(in oklch, var(--accent) 28%, transparent);
   color: inherit;

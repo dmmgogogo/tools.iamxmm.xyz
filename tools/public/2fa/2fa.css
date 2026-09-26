@@ -5,17 +5,17 @@
 .tbtn {
   position: relative;
   border: 0; padding: 0; background: none; cursor: pointer;
-  font: 500 13px/1 var(--mono); color: var(--ink);
+  font: 500 13px/1 var(--mono); color: var(--result);
   transition: color .2s var(--ease);
 }
 .tbtn::after { content: ""; position: absolute; inset: -12px -6px; }
-.tbtn:hover { color: var(--accent); }
+.tbtn:hover { color: var(--result-hover); text-decoration: underline; text-underline-offset: 3px; }
 .tbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 /* 验证码蓝 */
-:root { --code: oklch(0.52 0.2 262); --code-hover: oklch(0.44 0.2 262); --ok: oklch(0.55 0.15 150); }
+:root { --code: var(--result); --code-hover: var(--result-hover); --ok: oklch(0.55 0.15 150); }
 @media (prefers-color-scheme: dark) {
-  :root { --code: oklch(0.74 0.14 255); --code-hover: oklch(0.82 0.11 255); --ok: oklch(0.75 0.15 150); }
+  :root { --ok: oklch(0.75 0.15 150); }
 }
 
 .grid {
