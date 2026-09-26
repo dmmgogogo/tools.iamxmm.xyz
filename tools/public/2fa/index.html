@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>2fa / tools</title>
+<link rel="stylesheet" href="/home.css?v=1">
+<link rel="stylesheet" href="/2fa/2fa.css?v=3">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> 2fa</p>
+    <h1 class="mark small">2fa<span class="slash">/</span><span class="caret" aria-hidden="true"></span></h1>
+    <p class="lede">谷歌身份验证器 · TOTP 动态密码。点击任一格复制验证码。</p>
+  </header>
+
+  <section class="index">
+    <div class="index-head">
+      <h2>密钥</h2>
+      <div class="tools-bar">
+        <button class="tbtn" id="btnImport">导入</button>
+        <button class="tbtn" id="btnExport">导出备份</button>
+        <span class="tally" id="count">00 项</span>
+      </div>
+    </div>
+    <div class="grid" id="grid">
+      <button class="card add" id="btnAdd"><span class="plus">+</span>添加密钥</button>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>密钥只存在本机浏览器 localStorage，不上传服务器</span>
+    <span>换浏览器或清缓存会丢失 · 请定期导出备份</span>
+  </footer>
+</main>
+
+<dialog id="dlgAdd">
+  <form method="dialog" id="formAdd">
+    <h3>添加密钥</h3>
+    <label for="inName">备注名（可空）</label>
+    <input id="inName" autocomplete="off" maxlength="100">
+    <label for="inSecret">密钥（Base32）或 otpauth:// 链接</label>
+    <input id="inSecret" autocomplete="off" spellcheck="false" required>
+    <div class="err" id="addErr"></div>
+    <div class="actions">
+      <button type="button" class="btn" data-close>取消</button>
+      <button type="submit" class="btn primary">添加</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlgImport">
+  <form method="dialog" id="formImport">
+    <h3>导入</h3>
+    <textarea id="inImport" spellcheck="false" placeholder="粘贴 JSON / otpauth:// 链接 / 每行「备注 密钥」"></textarea>
+    <div class="hint">
+      支持本站导出的 JSON、lzltool 数据、otpauth:// 链接（每行一个）、每行「备注 密钥」。重复密钥自动跳过。<br>
+      从 lzltool 迁移：F12 → Application → Local Storage → 复制 <code>GoogleDynamicPassword</code> 的值。
+    </div>
+    <div class="err" id="importErr"></div>
+    <div class="actions">
+      <button type="button" class="btn" data-close>取消</button>
+      <button type="submit" class="btn primary">导入</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="/2fa/app.js?v=3"></script>
+</body>
+</html>
