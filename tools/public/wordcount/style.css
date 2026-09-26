@@ -1,0 +1,4 @@
+/* wordcount 专用，依赖 /home.css 变量与 /tool.css */
+.note { margin: 0; font: 12px/1.6 var(--sans); color: var(--ink-2); }
+.pane .note { margin-top: 12px; }
+.kv td { font-variant-numeric: tabular-nums; }

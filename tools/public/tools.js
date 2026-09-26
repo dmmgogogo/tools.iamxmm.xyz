@@ -2,6 +2,30 @@
 // kw 是额外的搜索关键词（拼音缩写、英文别名等），不显示。
 window.TOOLS = [
   {
+    cat: '文档 · 图片',
+    items: [
+      { slug: 'pdf', name: 'PDF 工具箱', desc: '图片转 PDF、合并、拆分、PDF 转图片', kw: 'pdf merge split jpg to pdf pdf to jpg hebing chaifen zhuan tupian' },
+      { slug: 'image', name: '图片压缩 / 转换', desc: '批量压缩、缩放、JPG / PNG / WebP 互转', kw: 'image compress resize png jpg webp tupian yasuo suofang geshi' },
+    ],
+  },
+  {
+    cat: '文本',
+    items: [
+      { slug: 'wordcount', name: '字数统计', desc: '中文字数、英文单词、字符、段落、阅读时间', kw: 'word count counter zishu tongji zifu' },
+      { slug: 'tts', name: '文字转语音', desc: '浏览器朗读，可选语音、语速、音调', kw: 'tts text to speech yuyin langdu wenzi' },
+      { slug: 'typing', name: '打字测试', desc: '中英文打字速度与准确率测试', kw: 'typing test speed wpm daizi dazi sudu' },
+    ],
+  },
+  {
+    cat: '日常 · 计算',
+    items: [
+      { slug: 'loan', name: '贷款计算器', desc: '房贷 / 车贷，等额本息与等额本金，还款计划', kw: 'loan mortgage calculator fangdai daikuan yuegong' },
+      { slug: 'date', name: '日期计算', desc: '日期相差、加减天数、年龄与星座生肖', kw: 'date calculator age riqi nianling xiangcha tianshu' },
+      { slug: 'timer', name: '倒计时 / 秒表', desc: '倒计时提醒、秒表计次', kw: 'timer countdown stopwatch daojishi miaobiao' },
+      { slug: 'random', name: '随机数 / 转盘', desc: '随机数生成、转盘抽签', kw: 'random number spin wheel suiji zhuanpan choujiang' },
+    ],
+  },
+  {
     cat: '格式化 · 数据',
     items: [
       { slug: 'json', name: 'JSON 格式化', desc: '格式化、压缩、校验、转义', kw: 'json geshihua yasuo jiaoyan format minify' },

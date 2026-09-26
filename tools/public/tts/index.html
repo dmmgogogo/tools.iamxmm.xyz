@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>tts / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/tts/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> tts</p>
+    <h1 class="mark small">tts<span class="slash">/</span></h1>
+    <p class="lede">文字转语音：调用浏览器自带的语音合成朗读文本，长文本按句排队并高亮当前句。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <label class="lbl" for="voice">语音</label>
+      <select class="field voice" id="voice"><option>加载中…</option></select>
+      <span class="spacer"></span>
+      <button type="button" class="btn primary w" id="play">播放</button>
+      <button type="button" class="btn w" id="pause" disabled>暂停</button>
+      <button type="button" class="btn" id="stop" disabled>停止</button>
+    </div>
+    <div class="bar sliders">
+      <label class="rng"><span class="lbl">语速</span><input type="range" id="rate" min="0.5" max="2" step="0.1" value="1"><output id="rateV">1.0</output></label>
+      <label class="rng"><span class="lbl">音调</span><input type="range" id="pitch" min="0" max="2" step="0.1" value="1"><output id="pitchV">1.0</output></label>
+      <label class="rng"><span class="lbl">音量</span><input type="range" id="volume" min="0" max="1" step="0.05" value="1"><output id="volumeV">100%</output></label>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>文本</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#input">清空</button>
+        </div>
+        <textarea class="io" id="input" spellcheck="false" placeholder="输入要朗读的文字">欢迎使用文字转语音。这个工具调用浏览器自带的语音合成，长文本会按句切分，逐句朗读并高亮当前句。你可以调整语速、音调和音量，也可以点击右侧任意一句，从那里开始朗读。</textarea>
+        <div class="status" id="status"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2>朗读进度</h2><span class="meta" id="progMeta"></span>
+        </div>
+        <div class="sents" id="sents"></div>
+        <p class="note">浏览器的语音合成 API 不提供音频数据，因此<strong>无法导出音频文件</strong>，如需保存请用系统录音。可用语音取决于操作系统和浏览器；标注「在线」的语音由浏览器厂商云端合成，朗读的文本会发送到其服务器，敏感内容请选本地语音。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/tts/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>random / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/random/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> random</p>
+    <h1 class="mark small">random<span class="slash">/</span></h1>
+    <p class="lede">随机数生成与转盘抽签。使用 crypto.getRandomValues 加拒绝采样，结果无偏。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="模式">
+        <button type="button" id="tabNum" class="on">随机数</button>
+        <button type="button" id="tabWheel">转盘抽签</button>
+      </div>
+    </div>
+
+    <div id="numBox">
+      <div class="bar">
+        <label class="lbl" for="min">最小</label><input type="text" class="field num" id="min" inputmode="numeric" value="1">
+        <label class="lbl" for="max">最大</label><input type="text" class="field num" id="max" inputmode="numeric" value="100">
+        <label class="lbl" for="count">个数</label><input type="text" class="field num" id="count" inputmode="numeric" value="1">
+        <label class="opt"><input type="checkbox" id="dup">允许重复</label>
+        <label class="opt"><input type="checkbox" id="sort">从小到大排序</label>
+        <span class="spacer"></span>
+        <button type="button" class="btn primary" id="gen">生成</button>
+      </div>
+      <div class="panes single">
+        <div class="pane">
+          <div class="pane-head">
+            <h2>结果</h2><span class="meta" id="numMeta"></span>
+            <span class="spacer"></span>
+            <button type="button" class="tbtn cbtn" data-copy="#numOut">复制</button>
+          </div>
+          <textarea class="io short" id="numOut" readonly spellcheck="false"></textarea>
+          <div class="status" id="numStatus"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wheelBox" hidden>
+      <div class="bar">
+        <label class="opt"><input type="checkbox" id="remove">抽中后移除</label>
+        <span class="spacer"></span>
+        <button type="button" class="btn primary w" id="spin">开始</button>
+      </div>
+      <div class="panes">
+        <div class="pane">
+          <div class="pane-head">
+            <h2>选项</h2><span class="meta" id="optMeta"></span>
+            <span class="spacer"></span>
+            <button type="button" class="tbtn" data-clear="#opts">清空</button>
+          </div>
+          <textarea class="io" id="opts" spellcheck="false" placeholder="每行一个选项，最多 50 个">火锅
+烧烤
+日料
+麻辣烫
+披萨
+沙拉</textarea>
+          <div class="status" id="wStatus"></div>
+          <div class="pane-head hist-head">
+            <h2>已抽出</h2>
+            <span class="spacer"></span>
+            <button type="button" class="tbtn" id="histClear">清空记录</button>
+          </div>
+          <ol class="hist" id="hist"></ol>
+        </div>
+        <div class="pane">
+          <div class="pane-head">
+            <h2>转盘</h2>
+            <span class="spacer"></span>
+            <button type="button" class="tbtn cbtn" data-copy="#winner">复制</button>
+          </div>
+          <div class="wheel-box"><canvas id="wheel" aria-label="抽签转盘"></canvas></div>
+          <div class="winner" id="winner" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/random/app.js?v=1"></script>
+</body>
+</html>

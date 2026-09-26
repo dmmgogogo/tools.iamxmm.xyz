@@ -1,0 +1,32 @@
+/* tts 专用，依赖 /home.css 变量与 /tool.css */
+.lbl { font: 500 12px/1 var(--mono); color: var(--ink-2); }
+select.field.voice { flex: 0 1 360px; min-width: 0; max-width: 100%; }
+.btn.w { min-width: 6em; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.bar.sliders { gap: 10px 28px; }
+.rng { display: inline-flex; align-items: center; gap: 10px; }
+.rng input[type=range] { width: 140px; accent-color: var(--ink); }
+.rng output { min-width: 3.5em; font: 600 13px/1 var(--mono); color: var(--result); font-variant-numeric: tabular-nums; }
+.sents {
+  min-height: 320px;
+  max-height: 480px;
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid var(--rule);
+  font: 15px/1.9 var(--sans);
+  color: var(--ink);
+  word-break: break-word;
+}
+.sents span { cursor: pointer; transition: background-color .15s var(--ease), color .15s var(--ease); }
+.sents span:hover { background: var(--hover); }
+.sents span.cur { background: var(--hover); color: var(--result); font-weight: 600; }
+.sents span.done { color: var(--ink-2); }
+.note { margin: 12px 0 0; font: 12px/1.7 var(--sans); color: var(--ink-2); }
+.note strong { color: var(--ink); }
+@media (max-width: 760px) {
+  .sents { min-height: 200px; }
+  .rng input[type=range] { width: 110px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sents span { transition: none; }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>typing / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/typing/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> typing</p>
+    <h1 class="mark small">typing<span class="slash">/</span></h1>
+    <p class="lede">打字速度测试：中文 / 英文，30 / 60 / 120 秒。逐字比对，实时显示速度与准确率。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="语言">
+        <button type="button" id="lZh" class="on">中文</button>
+        <button type="button" id="lEn">英文</button>
+      </div>
+      <div class="seg" role="group" aria-label="时长" id="durs">
+        <button type="button" data-dur="30">30s</button>
+        <button type="button" data-dur="60" class="on">60s</button>
+        <button type="button" data-dur="120">120s</button>
+      </div>
+      <span class="spacer"></span>
+      <button type="button" class="btn" id="next">换一段</button>
+      <button type="button" class="btn primary" id="restart">重来</button>
+    </div>
+
+    <div class="stats">
+      <div><span class="lbl">剩余</span><span class="val" id="sLeft">60s</span></div>
+      <div><span class="lbl" id="sSpeedLbl">字/分钟</span><span class="val" id="sSpeed">0</span></div>
+      <div><span class="lbl">准确率</span><span class="val" id="sAcc">—</span></div>
+      <div><span class="lbl">进度</span><span class="val" id="sProg">0</span></div>
+    </div>
+
+    <div class="ty-text" id="text" aria-label="待输入文本"></div>
+    <textarea class="io short" id="input" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="开始输入即开始计时（不能粘贴）"></textarea>
+    <div class="status" id="status"></div>
+
+    <div class="result" id="result" hidden>
+      <div class="pane-head"><h2>结果</h2><span class="meta" id="rMeta"></span></div>
+      <div class="res-grid">
+        <div><span class="lbl" id="rSpeedLbl">速度</span><span class="big" id="rSpeed">0</span></div>
+        <div><span class="lbl">准确率</span><span class="big" id="rAcc">0%</span></div>
+      </div>
+      <table class="kv"><tbody id="rOut"></tbody></table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/typing/app.js?v=1"></script>
+</body>
+</html>

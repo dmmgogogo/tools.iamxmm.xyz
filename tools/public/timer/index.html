@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>timer / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/timer/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> timer</p>
+    <h1 class="mark small">timer<span class="slash">/</span></h1>
+    <p class="lede">倒计时与秒表。按时间差计算，切到后台也不会走慢；结束时标题闪烁并响提示音。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="模式">
+        <button type="button" id="tabCd" class="on">倒计时</button>
+        <button type="button" id="tabSw">秒表</button>
+      </div>
+      <span class="spacer"></span>
+      <span class="meta" id="hint"></span>
+    </div>
+
+    <div id="cd">
+      <div class="row">
+        <label class="lbl" for="h">时</label><input type="number" class="field num" id="h" min="0" max="99" value="0">
+        <label class="lbl" for="m">分</label><input type="number" class="field num" id="m" min="0" max="59" value="5">
+        <label class="lbl" for="s">秒</label><input type="number" class="field num" id="s" min="0" max="59" value="0">
+        <span class="quick" id="quick">
+          <button type="button" class="btn" data-min="1">1 分</button>
+          <button type="button" class="btn" data-min="3">3 分</button>
+          <button type="button" class="btn" data-min="5">5 分</button>
+          <button type="button" class="btn" data-min="10">10 分</button>
+          <button type="button" class="btn" data-min="25">25 分</button>
+        </span>
+      </div>
+      <div class="big" id="cdShow" aria-live="off">00:05:00</div>
+      <div class="bar ctrl">
+        <button type="button" class="btn primary w" id="cdStart">开始</button>
+        <button type="button" class="btn" id="cdReset">重置</button>
+        <span class="spacer"></span>
+        <label class="opt"><input type="checkbox" id="notify">结束时发浏览器通知</label>
+      </div>
+      <div class="status" id="cdStatus"></div>
+    </div>
+
+    <div id="sw" hidden>
+      <div class="big" id="swShow">00:00.00</div>
+      <div class="bar ctrl">
+        <button type="button" class="btn primary w" id="swStart">开始</button>
+        <button type="button" class="btn w" id="swLap" disabled>计次</button>
+        <button type="button" class="btn" id="swReset">重置</button>
+      </div>
+      <div class="pane-head laps-head">
+        <h2>计次</h2><span class="meta" id="lapMeta"></span>
+        <span class="spacer"></span>
+        <button type="button" class="tbtn cbtn" id="lapCopy">复制</button>
+      </div>
+      <table class="laps">
+        <thead><tr><th>#</th><th>分段</th><th>累计</th></tr></thead>
+        <tbody id="laps"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/timer/app.js?v=1"></script>
+</body>
+</html>

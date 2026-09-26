@@ -1,0 +1,39 @@
+/* image 工具补充样式，只用 /home.css 变量 */
+.lbl { font: 12px/1 var(--mono); color: var(--ink-2); }
+.grp { display: inline-flex; align-items: center; gap: 8px; }
+.qual { display: inline-flex; align-items: center; gap: 10px; }
+.qual input { width: 160px; accent-color: var(--ink); }
+.qual.off { opacity: .4; }
+.qv { min-width: 3em; font: 600 13px/1 var(--mono); color: var(--ink); }
+.seg button:disabled { opacity: .4; cursor: not-allowed; }
+.seg button:disabled:hover { background: transparent; }
+#dlAll { min-width: 8em; }
+#dlAll:disabled { opacity: .5; cursor: not-allowed; }
+.tbtn:disabled { opacity: .4; cursor: not-allowed; }
+.work > .drop { margin-top: 16px; }
+
+.sum { padding: 10px 4px; border-bottom: 2px solid var(--ink); font: 13px/1.5 var(--mono); }
+#sumText { color: var(--result); font-weight: 600; word-break: break-all; }
+
+.rlist { margin: 0; padding: 0; list-style: none; }
+.rlist li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--rule);
+  font: 13px/1.5 var(--mono);
+}
+.rlist .th { display: block; width: 64px; height: 64px; border: 1px solid var(--rule); background: var(--hover); }
+.rlist .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink); }
+.rlist .line { color: var(--ink-2); font-size: 12px; word-break: break-all; }
+.rlist .new, .rlist .rate { color: var(--result); font-weight: 600; }
+.rlist .warn { color: var(--accent); font-size: 12px; }
+.rlist .ops { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+
+@media (max-width: 760px) {
+  .rlist li { gap: 10px; }
+  .rlist .th { width: 48px; height: 48px; }
+  .qual input { width: 120px; }
+}

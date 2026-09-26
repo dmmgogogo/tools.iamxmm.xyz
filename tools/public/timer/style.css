@@ -1,0 +1,30 @@
+/* timer 专用，依赖 /home.css 变量与 /tool.css */
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 8px; margin-top: 20px; }
+.row .field.num { width: 72px; }
+.lbl { font: 500 12px/1 var(--mono); color: var(--ink-2); }
+.quick { display: inline-flex; flex-wrap: wrap; gap: 8px; margin-left: 12px; }
+.big {
+  margin: 28px 0 20px;
+  font: 700 clamp(56px, 14vw, 148px)/1 var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--result);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.big.done { color: var(--ok); }
+.bar.ctrl { border-top-width: 1px; }
+.btn.w { min-width: 6.5em; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.meta { font: 12px/1.4 var(--mono); color: var(--ink-2); }
+.laps-head { margin-top: 24px; }
+.laps { width: 100%; border-collapse: collapse; font: 14px/1.5 var(--mono); font-variant-numeric: tabular-nums; }
+.laps th, .laps td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: right; }
+.laps th { font-weight: 500; color: var(--ink-2); border-bottom-color: var(--ink); }
+.laps th:first-child, .laps td:first-child { text-align: left; color: var(--ink-2); width: 4em; }
+.laps td { color: var(--result); font-weight: 600; }
+@media (max-width: 760px) {
+  .quick { margin-left: 0; }
+  .big { font-size: 17vw; }
+}

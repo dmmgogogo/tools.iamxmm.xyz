@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>image / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/image/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> image</p>
+    <h1 class="mark small">image<span class="slash">/</span></h1>
+    <p class="lede">批量压缩、缩放、转换图片格式（JPG / PNG / WebP）。图片不上传，全部在浏览器本地处理。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <span class="lbl">格式</span>
+      <div class="seg" role="group" aria-label="输出格式" id="fmtSeg">
+        <button type="button" data-v="jpg" class="on">JPG</button>
+        <button type="button" data-v="png">PNG</button>
+        <button type="button" data-v="webp" id="webpBtn">WebP</button>
+      </div>
+      <label class="qual" id="qualWrap"><span class="lbl">质量</span><input type="range" id="qual" min="0.1" max="1" step="0.01" value="0.8"><span class="qv" id="qualVal">0.80</span></label>
+    </div>
+    <div class="bar">
+      <span class="lbl">缩放</span>
+      <div class="seg" role="group" aria-label="缩放方式" id="scaleSeg">
+        <button type="button" data-v="orig" class="on">原尺寸</button>
+        <button type="button" data-v="long">最长边</button>
+        <button type="button" data-v="pct">百分比</button>
+      </div>
+      <span class="grp" id="scaleWrap" hidden>
+        <input class="field num" id="scaleVal" inputmode="numeric" autocomplete="off">
+        <span class="lbl" id="scaleUnit">px</span>
+      </span>
+      <span class="spacer"></span>
+      <button type="button" class="tbtn" id="clear">清空</button>
+      <button type="button" class="btn primary" id="dlAll">全部下载</button>
+    </div>
+
+    <label class="drop" id="drop">
+      <input type="file" id="file" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/bmp">
+      <span>拖入或点击选择图片（JPG / PNG / WebP / GIF 首帧 / BMP，可多选）</span>
+    </label>
+    <div class="status" id="status"></div>
+    <div class="sum" id="sum" hidden><span class="lbl">合计</span> <span id="sumText"></span></div>
+    <ol class="rlist" id="list"></ol>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/image/core.js?v=1"></script>
+<script src="/image/app.js?v=1"></script>
+</body>
+</html>

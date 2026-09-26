@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>loan / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/loan/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> loan</p>
+    <h1 class="mark small">loan<span class="slash">/</span></h1>
+    <p class="lede">贷款月供计算：等额本息 / 等额本金，生成还款计划表并可导出 CSV。结果仅供参考，以银行合同为准。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg" role="group" aria-label="还款方式">
+        <button type="button" id="mAnn" class="on">等额本息</button>
+        <button type="button" id="mPrin">等额本金</button>
+      </div>
+      <span class="spacer"></span>
+      <button type="button" class="btn" id="csv">导出 CSV</button>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head"><h2>贷款条件</h2></div>
+        <div class="form">
+          <label for="amount">贷款金额</label>
+          <span class="inline"><input type="text" class="field" id="amount" inputmode="decimal" autocomplete="off" value="1,000,000"><span class="unit">元</span></span>
+          <label for="rate">年利率</label>
+          <span class="inline"><input type="text" class="field" id="rate" inputmode="decimal" autocomplete="off" value="3.1"><span class="unit">%</span></span>
+          <label for="term">期限</label>
+          <span class="inline">
+            <input type="text" class="field" id="term" inputmode="decimal" autocomplete="off" value="30">
+            <span class="seg" role="group" aria-label="期限单位">
+              <button type="button" id="uYear" class="on">年</button>
+              <button type="button" id="uMonth">月</button>
+            </span>
+          </span>
+        </div>
+        <div class="status" id="status"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-head"><h2>结果</h2><span class="meta" id="outMeta"></span></div>
+        <table class="kv"><tbody id="out"></tbody></table>
+      </div>
+    </div>
+
+    <div class="plan-wrap">
+      <div class="pane-head">
+        <h2>还款计划</h2><span class="meta" id="planMeta"></span>
+        <span class="spacer"></span>
+        <button type="button" class="tbtn" id="expand" hidden>展开全部</button>
+      </div>
+      <div class="scroll">
+        <table class="plan">
+          <thead><tr><th>期数</th><th>月供</th><th>本金</th><th>利息</th><th>剩余本金</th></tr></thead>
+          <tbody id="plan"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/loan/app.js?v=1"></script>
+</body>
+</html>

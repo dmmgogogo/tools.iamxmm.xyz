@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>wordcount / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/wordcount/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> wordcount</p>
+    <h1 class="mark small">wordcount<span class="slash">/</span></h1>
+    <p class="lede">实时统计汉字、英文单词、字符、标点、段落、行数、UTF-8 字节数，并估算阅读时间。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <button type="button" class="btn" id="tidy">去除多余空行 / 首尾空格</button>
+      <span class="spacer"></span>
+      <span class="note">阅读时间：中文 400 字/分钟 + 英文 200 词/分钟</span>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head">
+          <h2>文本</h2><span class="meta" id="inMeta"></span>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn" data-clear="#input">清空</button>
+        </div>
+        <textarea class="io" id="input" spellcheck="false" placeholder="在这里输入或粘贴文本"></textarea>
+        <div class="status" id="status"></div>
+      </div>
+      <div class="pane">
+        <div class="pane-head">
+          <h2>统计</h2>
+          <span class="spacer"></span>
+          <button type="button" class="tbtn cbtn" id="copyAll">复制统计</button>
+        </div>
+        <table class="kv"><tbody id="out"></tbody></table>
+        <p class="note">段落 = 非空行数；标点按 Unicode 标点类统计（含中英文标点）。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/wordcount/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* loan 专用，依赖 /home.css 变量与 /tool.css */
+.form {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 14px;
+  align-items: center;
+  padding: 4px 0 2px;
+}
+.form > label { font: 500 12px/1 var(--mono); color: var(--ink-2); }
+.form .inline { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.form .inline .field { flex: 1; min-width: 0; width: auto; }
+.form .unit { font: 13px/1 var(--mono); color: var(--ink-2); }
+.kv td { font-variant-numeric: tabular-nums; }
+.kv td .sub { display: block; font-weight: 400; color: var(--ink-2); font-size: 12px; }
+
+.plan-wrap { margin-top: 28px; }
+.scroll { overflow-x: auto; }
+.plan { width: 100%; border-collapse: collapse; font: 13px/1.5 var(--mono); font-variant-numeric: tabular-nums; }
+.plan th, .plan td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+.plan th { font-weight: 500; color: var(--ink-2); border-bottom-color: var(--ink); }
+.plan th:first-child, .plan td:first-child { text-align: left; color: var(--ink-2); }
+.plan tbody tr:hover { background: var(--hover); }

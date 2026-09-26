@@ -1,0 +1,59 @@
+/* pdf 工具补充样式，只用 /home.css 变量 */
+.grp { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.lbl { font: 12px/1 var(--mono); color: var(--ink-2); }
+#range { width: 180px; }
+#go { min-width: 8em; }
+#go:disabled { opacity: .5; cursor: progress; }
+.tbtn:disabled { opacity: .4; cursor: not-allowed; }
+.work > .drop { margin-top: 16px; }
+
+.flist { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: f; }
+.flist li {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--rule);
+  font: 13px/1.4 var(--mono);
+  counter-increment: f;
+}
+.flist li::before { content: counter(f); min-width: 1.6em; color: var(--ink-2); text-align: right; }
+.flist .th { display: block; width: 48px; height: 48px; object-fit: contain; border: 1px solid var(--rule); background: var(--hover); }
+.flist .noth { width: 0; }
+.flist .info { min-width: 0; }
+.flist .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink); }
+.flist .meta { color: var(--ink-2); font-size: 12px; }
+.flist .ops { display: inline-flex; gap: 14px; }
+
+.pages {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+.pages:empty { display: none; }
+.pg { margin: 0; min-width: 0; }
+.pg .cv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--rule);
+  background: var(--hover);
+}
+.pg canvas { display: block; max-width: 100%; max-height: 100%; }
+.pg figcaption { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; font: 12px/1.4 var(--mono); color: var(--ink-2); }
+.pg figcaption .spacer { flex: 1; }
+.pg .dim { color: var(--result); font-weight: 600; }
+
+@media (max-width: 760px) {
+  .pages { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .flist li { gap: 8px; }
+  .flist .ops { gap: 12px; }
+}
+
+/* 手机上功能切换按钮不折行，放不下时整体换行 */
+.seg.modes { flex-wrap: wrap; }
+.seg.modes button { white-space: nowrap; }
+@media (max-width: 420px) { .seg.modes button { padding: 0 9px; } }

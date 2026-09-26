@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<title>pdf / tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/tool.css?v=5">
+<link rel="stylesheet" href="/pdf/style.css?v=1">
+</head>
+<body>
+<main class="page wide">
+  <header class="mast">
+    <p class="kicker"><a href="/">tools</a> <span class="sep">/</span> pdf</p>
+    <h1 class="mark small">pdf<span class="slash">/</span></h1>
+    <p class="lede">图片转 PDF、合并、按页码拆分、PDF 转图片。文件不上传，全部在浏览器本地处理。</p>
+  </header>
+
+  <section class="work">
+    <div class="bar">
+      <div class="seg modes" role="group" aria-label="功能" id="modes">
+        <button type="button" data-mode="img" class="on">图片转 PDF</button>
+        <button type="button" data-mode="merge">合并 PDF</button>
+        <button type="button" data-mode="split">拆分 PDF</button>
+        <button type="button" data-mode="render">PDF 转图片</button>
+      </div>
+    </div>
+    <div class="bar">
+      <span class="grp" data-for="img">
+        <span class="lbl">页面</span>
+        <span class="seg" role="group" aria-label="页面尺寸" id="pageSeg">
+          <button type="button" data-v="fit" class="on">适应图片</button>
+          <button type="button" data-v="a4">A4 纵向</button>
+        </span>
+      </span>
+      <span class="grp" data-for="split">
+        <label class="lbl" for="range">页码</label>
+        <input class="field" id="range" placeholder="1-3,5,8-" spellcheck="false" autocomplete="off">
+        <label class="opt"><input type="checkbox" id="each">每页单独下载</label>
+      </span>
+      <span class="grp" data-for="render">
+        <span class="lbl">倍数</span>
+        <span class="seg" role="group" aria-label="缩放倍数" id="scaleSeg">
+          <button type="button" data-v="1">1x</button>
+          <button type="button" data-v="2" class="on">2x</button>
+          <button type="button" data-v="3">3x</button>
+        </span>
+        <span class="lbl">格式</span>
+        <span class="seg" role="group" aria-label="图片格式" id="fmtSeg">
+          <button type="button" data-v="png" class="on">PNG</button>
+          <button type="button" data-v="jpg">JPG</button>
+        </span>
+      </span>
+      <span class="spacer"></span>
+      <button type="button" class="tbtn" id="clear">清空</button>
+      <button type="button" class="btn primary" id="go">生成 PDF</button>
+    </div>
+
+    <label class="drop" id="drop">
+      <input type="file" id="file" multiple>
+      <span id="dropText">拖入或点击选择图片</span>
+    </label>
+    <div class="status" id="status"></div>
+    <ol class="flist" id="list"></ol>
+    <div class="pages" id="pages"></div>
+  </section>
+
+  <footer class="foot">
+    <span><a href="/">← 全部工具</a></span>
+    <span>全部在浏览器本地处理</span>
+  </footer>
+</main>
+<script src="/common.js?v=2"></script>
+<script src="/pdf/vendor/pdf-lib.min.js?v=1.17.1"></script>
+<script src="/pdf/core.js?v=1"></script>
+<script src="/pdf/app.js?v=1"></script>
+</body>
+</html>
