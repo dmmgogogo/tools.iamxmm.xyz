@@ -3,7 +3,7 @@
 .url-in { width: 100%; }
 .qhead { margin-top: 24px; }
 .kv .val { white-space: pre-wrap; }
-.kv .dim { color: var(--ink-2); }
+.kv .dim { color: var(--ink-2); font-weight: 400; }
 .query thead th { font-weight: 500; color: var(--ink-2); border-bottom: 1px solid var(--ink); }
 .query th { width: auto; }
 .query td:first-child { width: 30%; min-width: 80px; }
