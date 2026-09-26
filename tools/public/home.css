@@ -5,7 +5,7 @@
   --rule: oklch(0.86 0.012 70);
   --hover: oklch(0.945 0.014 75);
   --accent: oklch(0.6 0.19 35);
-  /* 结果色：计算结果、可复制的值、操作按钮 */
+  /* 结果色：计算结果、可复制的值（规则见 tools/DESIGN.md） */
   --result: oklch(0.52 0.2 262);
   --result-hover: oklch(0.44 0.2 262);
   --ok: oklch(0.55 0.15 150);
